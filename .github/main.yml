@@ -1,0 +1,38 @@
+name: CI
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  prepare:
+    name: Prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 18
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Yarn setup
+        uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 18
+      - run: yarn lint
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Yarn setup
+        uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 18
+      - run: yarn build
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Yarn setup
+        uses: DerYeger/yarn-setup-action@master
+        with:
+          node-version: 18
+      - run: yarn test

@@ -1,14 +1,32 @@
 {
   "name": "prizzle",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "I made Prisma and Drizzle have a baby",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
   "repository": "https://github.com/kgarchie/Prizzle.git",
   "author": "kgarchie <archiethebig@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "lint": "tsc",
+    "release": "yarn build && changeset publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [
     "prisma",
     "drizzle",
     "prizzle"
-  ]
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.2.5",
+    "changeset": "^0.2.6",
+    "inquirer": "^9.2.7",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
+    "typescript": "^5.1.3"
+  }
 }
