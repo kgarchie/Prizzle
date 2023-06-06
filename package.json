@@ -1,0 +1,14 @@
+{
+  "name": "prizzle",
+  "version": "0.0.0",
+  "description": "I made Prisma and Drizzle have a baby",
+  "main": "index.js",
+  "repository": "https://github.com/kgarchie/Prizzle.git",
+  "author": "kgarchie <archiethebig@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "prisma",
+    "drizzle",
+    "prizzle"
+  ]
+}
